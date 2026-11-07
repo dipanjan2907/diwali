@@ -1,0 +1,262 @@
+
+/* RANGOLI INTERACTIVE BACKGROUND */
+
+.rangoli-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(56, 22, 63, 0.3),
+      transparent 65%
+    ),
+    #3f1748;
+}
+
+/* Keep Rangoli content above background */
+
+.rangoli-section > :not(.rg-background) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Background layer */
+
+.rg-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Mouse-following glow */
+
+.rg-mouse-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    340px circle at var(--rg-pointer-x) var(--rg-pointer-y),
+    rgba(242, 170, 87, 0.16),
+    rgba(160, 74, 155, 0.07) 45%,
+    transparent 75%
+  );
+  transition: background 0.2s ease;
+}
+
+/* Ambient purple lights */
+
+.rg-ambient {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.3;
+  animation: rg-ambient-drift 12s ease-in-out infinite alternate;
+}
+
+.rg-ambient-one {
+  top: 10%;
+  left: -160px;
+  background: #b12b9b;
+}
+
+.rg-ambient-two {
+  bottom: 0;
+  right: -150px;
+  background: #9b5a24;
+  animation-delay: -5s;
+}
+
+/* Rotating mandalas */
+
+.rg-mandala {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(238, 183, 104, 0.14);
+  border-radius: 50%;
+  opacity: 0.35;
+  animation: rg-mandala-spin 65s linear infinite;
+}
+
+.rg-mandala::before,
+.rg-mandala::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.rg-mandala::before {
+  inset: 24px;
+  border: 1px dashed rgba(238, 183, 104, 0.35);
+}
+
+.rg-mandala::after {
+  inset: 65px;
+  border: 2px dotted rgba(238, 183, 104, 0.3);
+}
+
+.rg-mandala-inner {
+  color: rgba(238, 183, 104, 0.35);
+  font-size: 245px;
+  line-height: 1;
+}
+
+.rg-mandala-left {
+  top: 8%;
+  left: -220px;
+}
+
+.rg-mandala-right {
+  right: -210px;
+  bottom: 3%;
+  animation-direction: reverse;
+}
+
+/* Floating golden particles */
+
+.rg-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #f8d28d;
+  box-shadow:
+    0 0 7px rgba(255, 205, 125, 0.9),
+    0 0 17px rgba(255, 174, 69, 0.5);
+  opacity: 0;
+  animation: rg-float linear infinite;
+}
+
+/* Decorative stars */
+
+.rg-decoration {
+  position: absolute;
+  color: #f1c16e;
+  opacity: 0.45;
+  animation: rg-twinkle 4s ease-in-out infinite alternate;
+}
+
+.rg-decoration-one {
+  top: 16%;
+  left: 12%;
+  font-size: 28px;
+}
+
+.rg-decoration-two {
+  top: 35%;
+  right: 10%;
+  font-size: 20px;
+  animation-delay: -1s;
+}
+
+.rg-decoration-three {
+  bottom: 18%;
+  left: 8%;
+  font-size: 24px;
+  animation-delay: -2s;
+}
+
+.rg-decoration-four {
+  bottom: 10%;
+  right: 17%;
+  font-size: 32px;
+  animation-delay: -3s;
+}
+
+/* Animations */
+
+@keyframes rg-float {
+  0% {
+    transform: translateY(20px) scale(0.5);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.8;
+  }
+
+  75% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-90px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes rg-mandala-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rg-ambient-drift {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(80px, -60px);
+  }
+}
+
+@keyframes rg-twinkle {
+  from {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .rg-mandala {
+    width: 260px;
+    height: 260px;
+  }
+
+  .rg-mandala-inner {
+    font-size: 160px;
+  }
+
+  .rg-mandala-left {
+    left: -175px;
+  }
+
+  .rg-mandala-right {
+    right: -175px;
+  }
+
+  .rg-ambient {
+    width: 260px;
+    height: 260px;
+  }
+
+  .rg-mouse-glow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-background *,
+  .rg-background *::before,
+  .rg-background *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

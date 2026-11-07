@@ -65,7 +65,59 @@ function Hero() {
         </div>
         <div className="lantern-fringe" />
       </div>
+                {/* Traditional Diwali Fanus */}
+      <div className="hero-fanus">
+        <div className="akash-fanus fanus-one">
+          <div className="fanus-thread" />
+          <div className="fanus-cap" />
+          <div className="fanus-shape">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="fanus-bottom" />
+          <div className="fanus-tassel" />
+        </div>
 
+        <div className="akash-fanus fanus-two">
+          <div className="fanus-thread" />
+          <div className="fanus-cap" />
+          <div className="fanus-shape">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="fanus-bottom" />
+          <div className="fanus-tassel" />
+        </div>
+
+        <div className="akash-fanus fanus-three">
+          <div className="fanus-thread" />
+          <div className="fanus-cap" />
+          <div className="fanus-shape">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="fanus-bottom" />
+          <div className="fanus-tassel" />
+        </div>
+        <div className="akash-fanus fanus-four">
+  <div className="fanus-thread" />
+  <div className="fanus-cap" />
+  <div className="fanus-shape">
+    <span />
+    <span />
+    <span />
+    <span />
+  </div>
+  <div className="fanus-bottom" />
+  <div className="fanus-tassel" />
+</div>
+      </div>
       <div className="hero-sparkles">
         <span>✦</span>
         <span>✧</span>
@@ -99,7 +151,7 @@ function Hero() {
           </a>
 
           <a href="/diya" className="hero-secondary-btn">
-            Light up Diya 🪔
+            Light  Diya 🪔
           </a>
         </div>
       </div>

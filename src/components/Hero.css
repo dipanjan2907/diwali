@@ -336,3 +336,160 @@
     animation: none;
   }
 }
+
+/* =================================
+   TRADITIONAL DIWALI AKASH FANUS
+================================= */
+
+.hero-fanus {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.akash-fanus {
+  position: absolute;
+  top: 0;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: fanus-sway 4.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 15px rgba(255, 184, 65, 0.22));
+}
+
+.fanus-one {
+  left: 3%;
+  animation-delay: -1s;
+}
+
+.fanus-two {
+  right: 3%;
+  top: 35px;
+  transform: scale(0.85);
+  animation-delay: -2.5s;
+}
+
+.fanus-three {
+  left: 31%;
+  top: 10px;
+  transform: scale(0.58);
+  animation-delay: -3s;
+}
+
+.fanus-thread {
+  width: 2px;
+  height: 85px;
+  background: linear-gradient(#ffe8a1, #d99b36);
+}
+
+.fanus-cap {
+  width: 40px;
+  height: 13px;
+  background: linear-gradient(90deg, #d98b24, #ffe18a, #d98b24);
+  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+}
+
+.fanus-shape {
+  width: 76px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+  clip-path: polygon(15% 0, 85% 0, 100% 50%, 85% 100%, 15% 100%, 0 50%);
+  border: 2px solid #ffe7a0;
+  box-shadow: 0 0 22px rgba(255, 172, 44, 0.55);
+}
+
+.fanus-shape span {
+  border: 1px solid rgba(255, 236, 183, 0.8);
+  background: linear-gradient(135deg, #ffcf52, #e93b75);
+}
+
+.fanus-shape span:nth-child(2) {
+  background: linear-gradient(135deg, #ff75b7, #a52d8c);
+}
+
+.fanus-shape span:nth-child(3) {
+  background: linear-gradient(135deg, #ff9d35, #e83c55);
+}
+
+.fanus-shape span:nth-child(4) {
+  background: linear-gradient(135deg, #a95be8, #442c9d);
+}
+
+.fanus-bottom {
+  width: 35px;
+  height: 13px;
+  background: linear-gradient(90deg, #d98b24, #ffe18a, #d98b24);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.fanus-tassel {
+  width: 3px;
+  height: 25px;
+  background: #ffd45c;
+  position: relative;
+}
+
+.fanus-tassel::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -6px;
+  width: 15px;
+  height: 12px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ffce4c 0 2px,
+    #e94c83 2px 4px
+  );
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+@keyframes fanus-sway {
+  from {
+    rotate: -4deg;
+  }
+  to {
+    rotate: 4deg;
+  }
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .fanus-one {
+    left: -12px;
+    transform: scale(0.65);
+  }
+
+  .fanus-two {
+    right: -12px;
+    transform: scale(0.65);
+  }
+
+  .fanus-three {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .akash-fanus {
+    animation: none;
+  }
+}
+.fanus-four {
+  right: 35%;
+  top: 5px;
+  transform: scale(0.65);
+  animation-delay: -1.5s;
+}
+
+@media (max-width: 768px) {
+  .fanus-four {
+    display: none;
+  }
+}

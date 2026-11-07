@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import "./Fireworks.css";
-
+import "./fireworks-background.css";
 const COLORS = [
   "#FFD700",
   "#FF5E78",

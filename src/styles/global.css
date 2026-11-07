@@ -37,7 +37,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(8, 15, 32, 0.94);
+  background: rgba(46, 65, 112, 0.035);
   border-bottom: 1px solid rgba(222, 183, 112, 0.15);
   position: relative;
   z-index: 10;
@@ -670,7 +670,7 @@ button {
     radial-gradient(ellipse at 80% 50%,
       rgba(148, 94, 36, 0.12),
       transparent 50%),
-    #080F20;
+   linear-gradient(#0d0a1f,rgb(46, 8, 46)) ;
   border-top: 1px solid rgba(232, 189, 115, 0.12);
 }
 
@@ -712,7 +712,7 @@ button {
   padding: 14px;
   border: 1px solid rgba(232, 189, 115, 0.2);
   border-radius: 9px;
-  background: #101D32;
+  background: #101d3272;
   color: #fff;
   font-family: 'Outfit', sans-serif;
   font-size: 13px;
@@ -816,7 +816,7 @@ button {
     radial-gradient(circle at center,
       color-mix(in srgb, var(--card-accent) 15%, transparent),
       transparent 65%),
-    #101D32;
+    #101d3265;
   box-shadow: 0 15px 55px #0005;
   transition: 0.4s;
 }
@@ -947,7 +947,7 @@ button {
 
 .rangoli-section {
   padding: 100px 7%;
-  background: #0b1730;
+  background: #0b1730f2;
   color: #f8e5b0;
 }
 
@@ -1395,4 +1395,26 @@ body {
 main {
   min-height: 100vh;
   overflow: visible;
+}
+/* FULL WIDTH AURORA DIWALI LAYOUT */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  max-width: none;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }

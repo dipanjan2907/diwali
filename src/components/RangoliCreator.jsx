@@ -1,4 +1,5 @@
 
+import RangoliBackground from "./RangoliBackground";
 import { useState, useRef } from "react";
 
 const palette = [
@@ -304,6 +305,7 @@ const Lotus = () => (
 
   return (
     <section className="rangoli-section" id="rangoli">
+          <RangoliBackground />
       <div className="section-heading">
         <span className="section-tag">YOUR CREATIVE CORNER</span>
         <h2>Create Your Own Rangoli</h2>
